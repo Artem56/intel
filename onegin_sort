@@ -1,0 +1,46 @@
+/*Сортировка Онегина
+Артем Соломатин
+*/
+
+void gnom(char** mass, const int n);
+
+int main(){
+    char text[200][50] = {};   //двумерный массив из строк текста
+    char enter;                     //будет хранить считанный enter
+    char *ukaz[200] = {};       //массив указателей на первый элемент
+    int i, n;                  //счетчики и кол-во строк в тексте
+    
+    printf("Введите количество строк в тексте :\n");
+    scanf("%d", &n);        		
+    scanf("%c", &enter);      			 
+    printf ("Введите текст из %d строк\n", n);
+    
+    for (i = 0; i < n; i++){
+		int j;
+        for (j = 0; (text[i][j] = getchar()) != '\n';j++ ){ //заполняем массив строками    
+            if (j == 0) 
+            ukaz[i] = &text[i][j];    		  //заполняем массив указателей адресами первых элементов строк
+        }
+    }
+    
+    gnom_sort(ukaz, n); 							
+     printf("\n");  
+    for (i = 0; i < n; i++)
+     printf("%s", ukaz[i]);        
+       
+    return 0;
+}
+
+void gnom_sort (char** mas, int n){      
+int i = 1;	  	
+while (i<n){
+		if (i == 0 || *mas[i-1] <= *mas[i]){
+		i++;
+		}else {
+			char *tmp = mas[i];
+			mas[i] = mas[i-1];
+			mas[i-1]=tmp;
+			i--;
+		}
+	}
+}	
