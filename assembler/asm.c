@@ -2,7 +2,7 @@
  * Соломатин Артем
  * Асемблер
 */
-#include "Cmd.asm"
+#include "dop.asm"
 
 #define DEFINE_CMD(k)\
 		if(strncmp(cmd,Mass[k].name, 3) == 0){\
