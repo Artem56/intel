@@ -3,7 +3,7 @@
  * CPU
 */
 
-#include "Cmd.asm"
+#include "dop.asm"
 
 #define NORMAL_SIZE 50 //стандартный размер, потом проверим, не превысило ли значение top значение size
 #define DOP_SIZE 20                       
